@@ -19,7 +19,7 @@ namespace CapaDatos
             string orden = string.Empty;
 
             if (accion == "Alta")
-                orden = "insert into Turno values (" + objTurno.pNombreCliente + ',' + objTurno.Fecha + "," + objTurno.Hora + "," + objTurno.Barbero + "');";
+                orden = "insert into Turno values (" + objTurno.Dni + ',' + objTurno.Fecha + "," + objTurno.Hora + "," + objTurno.Barbero + "');";
 
             if (accion == "Modificar")
                 orden = "update Turno set Fecha='" + objTurno.Fecha + "');"; //"'
@@ -66,13 +66,13 @@ namespace CapaDatos
                 Abrirconexion();
                 cmd.ExecuteNonQuery();
                 da.SelectCommand = cmd;
-                da.Fill(ds);// se llena el dataset con el tataAdapter
+                da.Fill(ds);// se llena el dataset con el DataAdapter
 
 
             }
             catch (Exception e)
             {
-                throw new Exception("Error al listar profesionales", e);
+                throw new Exception("Error al listar Turnos", e);
             }
             finally
             {

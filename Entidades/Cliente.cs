@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Cliente
+    public class Cliente
     {
-        private string nombre;
+        //private string nombre;
         private long dni;
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        //public string Nombre
+        //{
+        //    get { return nombre; }
+        //    set { nombre = value; }
+        //}
         public long DNI
         {
             get { return dni; }

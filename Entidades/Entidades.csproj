@@ -45,11 +45,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turno.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Barberia\Barberia.csproj">
-      <Project>{1995782f-cf1a-4e2f-9faf-0ea18298f8f0}</Project>
-      <Name>Barberia</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
