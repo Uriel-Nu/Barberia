@@ -46,10 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Barberia\Barberia.csproj">
-      <Project>{1995782f-cf1a-4e2f-9faf-0ea18298f8f0}</Project>
-      <Name>Barberia</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
       <Project>{2ccf462d-5340-4948-bcf4-495131e224dd}</Project>
       <Name>CapaDatos</Name>

@@ -12,12 +12,12 @@ namespace CapaDatos
    public class DatosConexion
     {
         protected SqlConnection conexion;
-        protected string cadenaConexion = @"(LocalDB)\MSSQLLocalDB;Integrated Security = True; Connect Timeout = 30";
-
+        // protected string cadenaConexion = @"(LocalDB)\MSSQLLocalDB;Integrated Security = True; Connect Timeout = 30";
+        public string cadenaConexion = "Data Source=DESKTOP-2NT6HAM\\SQLEXPRESS;Initial Catalog=the_brothers;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False";
 
         public DatosConexion()
         {
-            conexion = new SqlConnection();
+            conexion = new SqlConnection(cadenaConexion);
         }
 
         public void Abrirconexion()

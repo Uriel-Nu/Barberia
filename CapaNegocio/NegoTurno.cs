@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Entidades;
 using CapaDatos;
-using Barberia;
+
 
 // se comunica la capa de presentacion con la capa de datos
 namespace CapaNegocio

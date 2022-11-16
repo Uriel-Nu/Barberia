@@ -47,10 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Barberia\Barberia.csproj">
-      <Project>{1995782f-cf1a-4e2f-9faf-0ea18298f8f0}</Project>
-      <Name>Barberia</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c5b57dc9-95fd-45d9-b3ed-d9efe7a278a1}</Project>
       <Name>Entidades</Name>

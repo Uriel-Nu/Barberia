@@ -92,6 +92,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{1e2624b4-45c0-4095-9cee-5079a8502525}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c5b57dc9-95fd-45d9-b3ed-d9efe7a278a1}</Project>
       <Name>Entidades</Name>

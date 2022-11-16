@@ -27,7 +27,7 @@ namespace CapaDatos
 
             // falta el de baja
 
-            SqlCommand cmd = new SqlCommand(orden, conexion);
+            SqlCommand cmd = new SqlCommand(orden, cadenaConexion);
 
             try
             {
@@ -53,12 +53,12 @@ namespace CapaDatos
         {
             string orden = string.Empty;// se declara y se limpia la variable orden
             if (cual != "Todos")
-                orden = "select * from turnos where NombreCliente=" + (cual) + ";";
+                orden = "select * from turnos where dni =" + (cual) + ";";
             else
                 orden = "select * from turnos";
             // falta hacer el delete
 
-            SqlCommand cmd = new SqlCommand(orden, conexion);//se crea el command y se instancia,llama la orden si es un inser, update o felete
+            SqlCommand cmd = new SqlCommand(orden, cadenaConexion);//se crea el command y se instancia,llama la orden si es un inser, update o felete
             DataSet ds = new DataSet(); // se declara y se crea el dataset
             SqlDataAdapter da = new SqlDataAdapter();//se declara y crea el dataadapter
             try
