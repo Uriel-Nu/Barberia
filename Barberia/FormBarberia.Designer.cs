@@ -129,7 +129,7 @@ namespace Barberia
             this.Btncargar.TabIndex = 9;
             this.Btncargar.Text = "cargar";
             this.Btncargar.UseVisualStyleBackColor = true;
-           // this.Btncargar.Click += new System.EventHandler(this.Btncargar_Click_1);
+            this.Btncargar.Click += new System.EventHandler(this.Btncargar_Click);
             // 
             // btnModificar
             // 

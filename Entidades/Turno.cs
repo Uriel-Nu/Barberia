@@ -41,7 +41,7 @@ namespace Entidades
             set { hora = value; }
         }
         //propiedad
-        public String Barbero
+        public string Barbero
         {
             get { return barbero; }
             set { barbero = value; }
@@ -54,7 +54,7 @@ namespace Entidades
         public Turno ( int dni,string fecha,string hora,string barbero )
 
         {
-            this.dni = dni;
+            Dni = dni;
             Fecha = fecha;
             Hora = hora;
             Barbero = barbero;

@@ -59,7 +59,8 @@ namespace Barberia
         private void Btncargar_Click(object sender, EventArgs e)
         {
             int Tgrabados = -1;
-            NuevoTurno = new Turno(int.Parse(textBoxDni.Text), textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text);
+            NuevoTurno = new Turno(
+                int.Parse(textBoxDni.Text), textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text);
             Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
 
             if (Tgrabados == -1)
@@ -69,6 +70,8 @@ namespace Barberia
             }
             else
             {
+                MessageBox.Show("puto el que lee");
+
                 //    lblCodigoMov.Text = NuevoProducto.p_codigo.ToString();
                 //    lblDescripMov.Text = NuevoProducto.p_descripcion;
                 //    lbl_StockMov.Text = "Hay " + NuevoProducto.p_stock.ToString() + " Unidades";
@@ -78,7 +81,7 @@ namespace Barberia
                 //    txtCantidad.Focus();
 
                 //    nuevo = true;
-                   LlenarDgv();
+                LlenarDgv();
                 //}
             }
 
