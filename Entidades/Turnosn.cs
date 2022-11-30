@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Turno
+    public class Turnosn
     {
         private int dni;
         //private string NombreCliente;
@@ -47,11 +47,11 @@ namespace Entidades
             set { barbero = value; }
         }
         //constructor por defecto
-        public Turno()
+        public Turnosn()
         { 
         }
         //constructor con datos
-        public Turno ( int dni,string fecha,string hora,string barbero )
+        public Turnosn ( int dni,string fecha,string hora,string barbero )
 
         {
             Dni = dni;

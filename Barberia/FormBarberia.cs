@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;//preguntar por que esta en gris
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,16 +16,47 @@ namespace Barberia
     public partial class FormBarberia : Form
 
     {
-        Turno NuevoTurno;
-        Turno TurnoExistente;
+        Turnosn NuevoTurno;
+        //Turnos TurnoExistente;
 
         NegoTurno objNegoTurno = new NegoTurno();
         public FormBarberia()
         {
-            InitializeComponent();
+            //InitializeComponent();
             CrearDgv();
             LlenarDgv();
+        //    Cargar();
+
+        //}
+        //private void Cargar()
+        //{
+        //    int Tgrabados = -1;
+        //    NuevoTurno = new Turnos();
+        //    //int.Parse(textBoxDni.Text) textBoxFecha.Text textBoxHora.Text textBoxBarbero.Text);
+        //    Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
+
+        //    if (Tgrabados == -1)
+        //    {
+        //        MessageBox.Show("No se pudo grabar el turno en el sistema");
+
+        //    }
+        //    else
+        //        MessageBox.Show(" se pudo grabar el turno en el sistema");
+
+
+
         }
+        private void CrearDgv()
+        {
+            InitializeComponent();
+            dgv1.Columns.Add("0", "Dni");
+            dgv1.Columns.Add("1", "Fecha");
+            dgv1.Columns.Add("2", "Hora");
+            dgv1.Columns.Add("3", "Barbero");
+
+
+        }
+
         private void LlenarDgv()
         {
             dgv1.Rows.Clear();
@@ -37,30 +68,23 @@ namespace Barberia
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     //Lo que quieres mostrar esta en dr[0].ToString(), dr[1].ToString(),
-                    dgv1.Rows.Add(dr[0].ToString(), dr[1]);
+                    dgv1.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString());
                 }
             }
             else
                 MessageBox.Show("No hay productos cargados en el sistema");
         }
-        private void CrearDgv()
-        {
-            InitializeComponent();
-            dgv1.Columns.Add("0", "dni");
-            dgv1.Columns.Add("1", "fecha");
-            dgv1.Columns.Add("2", "hora");
-            dgv1.Columns.Add("3", "barbero");
 
 
-        }
+
 
 
 
         private void Btncargar_Click(object sender, EventArgs e)
         {
             int Tgrabados = -1;
-            NuevoTurno = new Turno(
-                int.Parse(textBoxDni.Text), textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text);
+            NuevoTurno = new Turnosn(int.Parse(textBoxDni.Text),textBoxFecha.Text,textBoxHora.Text,textBoxBarbero.Text);
+            //int.Parse(textBoxDni.Text) textBoxFecha.Text textBoxHora.Text textBoxBarbero.Text);
             Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
 
             if (Tgrabados == -1)
@@ -70,25 +94,23 @@ namespace Barberia
             }
             else
             {
-                MessageBox.Show("puto el que lee");
-
-                //    lblCodigoMov.Text = NuevoProducto.p_codigo.ToString();
-                //    lblDescripMov.Text = NuevoProducto.p_descripcion;
-                //    lbl_StockMov.Text = "Hay " + NuevoProducto.p_stock.ToString() + " Unidades";
 
 
-                //    txtCantidad.Clear();
-                //    txtCantidad.Focus();
 
-                //    nuevo = true;
+
                 LlenarDgv();
-                //}
+                //Cargar();
+
             }
 
-
         }
+        
+        
+}
+
+        
 
 
     }
-}
+
 

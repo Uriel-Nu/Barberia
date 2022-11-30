@@ -13,20 +13,21 @@ namespace CapaDatos
 {
     public class AdministrarTurnos : DatosConexion
     {
-        public int abmTurnos (string accion, Turno objTurno)
+        public int abmTurnos (string accion, Turnosn objTurnosn)
         {
             int resultado = -1;
             string orden = string.Empty;
 
             if (accion == "Alta")
-                orden = "insert into Turno values (" + objTurno.Dni + ',' + objTurno.Fecha + "," + objTurno.Hora + "," + objTurno.Barbero + "');";
+                orden = $"insert into Turnosn values ( { objTurnosn.Dni} , '{  objTurnosn.Fecha}','{ objTurnosn.Hora}',' {objTurnosn.Barbero}')";
 
             if (accion == "Modificar")
-                orden = "update Turno set Fecha='" + objTurno.Fecha + "');"; //"'
-            //where CodProf = "+ objProfesional.CodProf + "; ";
+                orden = $"update Turnosn set Fecha= ´{objTurnosn.Fecha}' where  fecha='{objTurnosn.Fecha}'";
+            
 
-            // falta el de baja
-
+           
+            if (accion == "Baja")
+                orden = $"delete from Turnosn fecha= '{objTurnosn.Fecha}'";
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
             try
@@ -37,7 +38,7 @@ namespace CapaDatos
             catch (Exception e)
             {
 
-                throw new Exception("Error al tratar de cargar, modificar o borrar el turno", e);
+                throw new Exception($"Error al tratar de guardar,borrar o modificar ",e);
 
             }
             finally
@@ -53,9 +54,9 @@ namespace CapaDatos
         {
             string orden = string.Empty;// se declara y se limpia la variable orden
             if (cual != "Todos")
-                orden = "select * from turnos where dni =" + (cual) + ";";
+                orden = $"select * from turnosn where dni = {int.Parse(cual)};";
             else
-                orden = "select * from turnos";
+                orden = "select * from turnosn;";
             // falta hacer el delete
 
             SqlCommand cmd = new SqlCommand(orden, conexion);//se crea el command y se instancia,llama la orden si es un inser, update o felete
@@ -72,7 +73,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al listar Turnos", e);
+                throw new Exception("Error al listar Turnosn", e);
             }
             finally
             {

@@ -14,7 +14,7 @@ namespace CapaNegocio
     public class NegoTurno
     {
         AdministrarTurnos DatosObjAdminTurno = new AdministrarTurnos();// declara objeto de administrarTurno
-        public int abmturnos(string accion, Turno objturno)
+        public int abmturnos(string accion, Turnosn objturno)
         {
             return DatosObjAdminTurno.abmTurnos(accion, objturno);//devuelve lo que devuelva el metodo de abmturnos
         }

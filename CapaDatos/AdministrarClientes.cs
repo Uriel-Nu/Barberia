@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class AdministrarClientes : DatosConexion
     {
-        public int abmClientes(string accion, Turno objcliente)
+        public int abmClientes(string accion, Turnosn objcliente)
         {
             int resultado = -1;
             string orden = string.Empty;
