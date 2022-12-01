@@ -62,5 +62,14 @@ namespace Entidades
             Barbero = barbero;
             Id = id;    
         }
+        public Turnosnuevo(string nombre, string fecha, string hora, string barbero)
+
+        {
+            Nombre = nombre;
+            Fecha = fecha;
+            Hora = hora;
+            Barbero = barbero;
+           
+        }
     }
 }

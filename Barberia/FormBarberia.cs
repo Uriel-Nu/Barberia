@@ -67,7 +67,7 @@ namespace Barberia
         private void Btncargar_Click(object sender, EventArgs e)
         {
             int Tgrabados = -1;
-            NuevoTurno = new Turnosnuevo(textBoxNombre.Text, textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text, int.Parse(TextBoxid.Text));
+            NuevoTurno = new Turnosnuevo(textBoxNombre.Text, textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text);
             
             Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
 

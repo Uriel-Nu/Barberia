@@ -19,7 +19,7 @@ namespace CapaDatos
             string orden = string.Empty;
 
             if (accion == "Alta")
-                orden = $"insert into Turnosnuevo values ( {objTurnosnuevo.Id}'{objTurnosnuevo.Nombre}', '{ objTurnosnuevo.Fecha}','{ objTurnosnuevo.Hora}',' {objTurnosnuevo.Barbero})";
+                orden = $"insert into Turnosnuevo values ( '{objTurnosnuevo.Nombre}', '{ objTurnosnuevo.Fecha}','{ objTurnosnuevo.Hora}','{objTurnosnuevo.Barbero}')";
 
             if (accion == "Modificar")
                 orden = $"update Turnosnuevo set Fecha= ´{objTurnosnuevo.Fecha}' where  fecha='{objTurnosnuevo.Fecha}'";
