@@ -16,32 +16,16 @@ namespace Barberia
     public partial class FormBarberia : Form
 
     {
-        Turnosn NuevoTurno;
+        Turnosnuevo NuevoTurno;
         //Turnos TurnoExistente;
 
         NegoTurno objNegoTurno = new NegoTurno();
         public FormBarberia()
         {
-            //InitializeComponent();
+            
             CrearDgv();
             LlenarDgv();
-        //    Cargar();
-
-        //}
-        //private void Cargar()
-        //{
-        //    int Tgrabados = -1;
-        //    NuevoTurno = new Turnos();
-        //    //int.Parse(textBoxDni.Text) textBoxFecha.Text textBoxHora.Text textBoxBarbero.Text);
-        //    Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
-
-        //    if (Tgrabados == -1)
-        //    {
-        //        MessageBox.Show("No se pudo grabar el turno en el sistema");
-
-        //    }
-        //    else
-        //        MessageBox.Show(" se pudo grabar el turno en el sistema");
+        
 
 
 
@@ -49,11 +33,11 @@ namespace Barberia
         private void CrearDgv()
         {
             InitializeComponent();
-            dgv1.Columns.Add("0", "Dni");
-            dgv1.Columns.Add("1", "Fecha");
-            dgv1.Columns.Add("2", "Hora");
-            dgv1.Columns.Add("3", "Barbero");
-
+            dgv1.Columns.Add("0", "id");
+            dgv1.Columns.Add("1", "Nombre");
+            dgv1.Columns.Add("2", "Fecha");
+            dgv1.Columns.Add("3", "Hora");
+            dgv1.Columns.Add("4", "Barbero");
 
         }
 
@@ -83,8 +67,8 @@ namespace Barberia
         private void Btncargar_Click(object sender, EventArgs e)
         {
             int Tgrabados = -1;
-            NuevoTurno = new Turnosn(int.Parse(textBoxDni.Text),textBoxFecha.Text,textBoxHora.Text,textBoxBarbero.Text);
-            //int.Parse(textBoxDni.Text) textBoxFecha.Text textBoxHora.Text textBoxBarbero.Text);
+            NuevoTurno = new Turnosnuevo(textBoxNombre.Text, textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text, int.Parse(TextBoxid.Text));
+            
             Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
 
             if (Tgrabados == -1)
@@ -104,9 +88,9 @@ namespace Barberia
             }
 
         }
-        
-        
-}
+
+       
+    }
 
         
 
