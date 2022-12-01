@@ -31,20 +31,20 @@ namespace Barberia
         private void InitializeComponent()
         {
             this.soliTurn = new System.Windows.Forms.Label();
-            this.lblnombreCli = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.LblHora = new System.Windows.Forms.Label();
             this.lblBarbero = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxHora = new System.Windows.Forms.TextBox();
             this.textBoxBarbero = new System.Windows.Forms.TextBox();
             this.Btncargar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.textBoxFecha = new System.Windows.Forms.TextBox();
-            this.lblid = new System.Windows.Forms.Label();
             this.TextBoxid = new System.Windows.Forms.TextBox();
+            this.lblid_cliente = new System.Windows.Forms.Label();
+            this.textoxid_cliente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +57,6 @@ namespace Barberia
             this.soliTurn.Size = new System.Drawing.Size(187, 25);
             this.soliTurn.TabIndex = 0;
             this.soliTurn.Text = "solicitud de turnos";
-            // 
-            // lblnombreCli
-            // 
-            this.lblnombreCli.AutoSize = true;
-            this.lblnombreCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombreCli.Location = new System.Drawing.Point(60, 107);
-            this.lblnombreCli.Name = "lblnombreCli";
-            this.lblnombreCli.Size = new System.Drawing.Size(65, 20);
-            this.lblnombreCli.TabIndex = 1;
-            this.lblnombreCli.Text = "Nombre";
             // 
             // lblFecha
             // 
@@ -97,15 +87,6 @@ namespace Barberia
             this.lblBarbero.Size = new System.Drawing.Size(66, 20);
             this.lblBarbero.TabIndex = 4;
             this.lblBarbero.Text = "Barbero";
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(205, 104);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 26);
-            this.textBoxNombre.TabIndex = 5;
-            //this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxDni_TextChanged);
             // 
             // textBoxHora
             // 
@@ -157,58 +138,77 @@ namespace Barberia
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(205, 314);
+            this.dgv1.Location = new System.Drawing.Point(205, 323);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(343, 150);
             this.dgv1.TabIndex = 12;
             // 
-            // textBoxFecha
-            // 
-            this.textBoxFecha.Location = new System.Drawing.Point(205, 145);
-            this.textBoxFecha.Name = "textBoxFecha";
-            this.textBoxFecha.Size = new System.Drawing.Size(100, 20);
-            this.textBoxFecha.TabIndex = 13;
-           // this.textBoxFecha.TextChanged += new System.EventHandler(this.textBoxFecha_TextChanged);
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Enabled = false;
-            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(60, 271);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(21, 20);
-            this.lblid.TabIndex = 14;
-            this.lblid.Text = "id";
-            // 
             // TextBoxid
             // 
-            this.TextBoxid.Enabled = false;
             this.TextBoxid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxid.Location = new System.Drawing.Point(205, 265);
+            this.TextBoxid.Location = new System.Drawing.Point(205, 104);
             this.TextBoxid.Name = "TextBoxid";
             this.TextBoxid.Size = new System.Drawing.Size(100, 26);
             this.TextBoxid.TabIndex = 15;
+            this.TextBoxid.Visible = false;
+            // 
+            // lblid_cliente
+            // 
+            this.lblid_cliente.AutoSize = true;
+            this.lblid_cliente.Enabled = false;
+            this.lblid_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid_cliente.Location = new System.Drawing.Point(60, 274);
+            this.lblid_cliente.Name = "lblid_cliente";
+            this.lblid_cliente.Size = new System.Drawing.Size(111, 20);
+            this.lblid_cliente.TabIndex = 16;
+            this.lblid_cliente.Text = "codigo_cliente";
+            // 
+            // textoxid_cliente
+            // 
+            this.textoxid_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoxid_cliente.Location = new System.Drawing.Point(205, 274);
+            this.textoxid_cliente.Name = "textoxid_cliente";
+            this.textoxid_cliente.Size = new System.Drawing.Size(100, 26);
+            this.textoxid_cliente.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "id";
+            this.label1.Visible = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 148);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // FormBarberia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 476);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textoxid_cliente);
+            this.Controls.Add(this.lblid_cliente);
             this.Controls.Add(this.TextBoxid);
-            this.Controls.Add(this.lblid);
-            this.Controls.Add(this.textBoxFecha);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.Btncargar);
             this.Controls.Add(this.textBoxBarbero);
             this.Controls.Add(this.textBoxHora);
-            this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.lblBarbero);
             this.Controls.Add(this.LblHora);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblnombreCli);
             this.Controls.Add(this.soliTurn);
             this.Name = "FormBarberia";
             this.Text = "FormBarberia";
@@ -221,19 +221,19 @@ namespace Barberia
         #endregion
 
         private System.Windows.Forms.Label soliTurn;
-        private System.Windows.Forms.Label lblnombreCli;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label LblHora;
         private System.Windows.Forms.Label lblBarbero;
-        private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxHora;
         private System.Windows.Forms.TextBox textBoxBarbero;
         private System.Windows.Forms.Button Btncargar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.TextBox textBoxFecha;
-        private Label lblid;
         private TextBox TextBoxid;
+        private Label lblid_cliente;
+        private TextBox textoxid_cliente;
+        private Label label1;
+        private DateTimePicker dateTimePicker1;
     }
 }

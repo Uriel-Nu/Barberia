@@ -13,7 +13,7 @@ namespace CapaNegocio
     public class NegoCliente
     {
       AdministrarClientes DatosObjAdmCliente = new AdministrarClientes();// declara objeto de administrarTurno
-        public int abmturnos(string accion, Turnosnuevo objCliente)
+        public int abmturnos(string accion, Turnosnuevos objCliente)
         {
             return DatosObjAdmCliente.abmClientes(accion, objCliente);//devuelve lo que devuelva el metodo de abmturnos
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using CapaNegocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Barberia
@@ -16,16 +17,16 @@ namespace Barberia
     public partial class FormBarberia : Form
 
     {
-        Turnosnuevo NuevoTurno;
+        Turnosnuevos NuevoTurno;
         //Turnos TurnoExistente;
 
         NegoTurno objNegoTurno = new NegoTurno();
         public FormBarberia()
         {
-            
+
             CrearDgv();
             LlenarDgv();
-        
+
 
 
 
@@ -34,10 +35,10 @@ namespace Barberia
         {
             InitializeComponent();
             dgv1.Columns.Add("0", "id");
-            dgv1.Columns.Add("1", "Nombre");
-            dgv1.Columns.Add("2", "Fecha");
-            dgv1.Columns.Add("3", "Hora");
-            dgv1.Columns.Add("4", "Barbero");
+            dgv1.Columns.Add("1", "fecha");
+            dgv1.Columns.Add("2", "hora");
+            dgv1.Columns.Add("3", "barbero");
+            dgv1.Columns.Add("4", "id_cliente");
 
         }
 
@@ -63,12 +64,11 @@ namespace Barberia
 
 
 
-
         private void Btncargar_Click(object sender, EventArgs e)
         {
             int Tgrabados = -1;
-            NuevoTurno = new Turnosnuevo(textBoxNombre.Text, textBoxFecha.Text, textBoxHora.Text, textBoxBarbero.Text);
-            
+            NuevoTurno = new Turnosnuevos(int.Parse(TextBoxid.Text), dateTimePicker1.Text, textBoxHora.Text, textBoxBarbero.Text);
+
             Tgrabados = objNegoTurno.abmturnos("Alta", NuevoTurno);
 
             if (Tgrabados == -1)
@@ -82,19 +82,21 @@ namespace Barberia
 
 
 
+
                 LlenarDgv();
                 //Cargar();
 
             }
+            
+
 
         }
-
-       
-    }
-
         
 
 
+
     }
+   
+}
 
 

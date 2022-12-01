@@ -7,18 +7,24 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Turnosnuevo
+    public class Turnosnuevos
     {
 
-        private string nombre;
+        
         private string fecha;
         private string hora;
         private string barbero;
         private int id;
+        private int id_cliente;
         //propiedad
-       
+        public int Id_cliente
+        {
+            get { return id_cliente; }
+            set { id_cliente = value; }
+        }
 
-        
+
+
         //propíedad
         public string Fecha
         {
@@ -43,29 +49,25 @@ namespace Entidades
             get { return id; }
             set { id = value; }
         }
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        
         //constructor por defecto
         //public Turnosnuevo()
         //{ 
         //}
         //constructor con datos
-        public Turnosnuevo (string nombre, string fecha,string hora,string barbero,int id)
+        public Turnosnuevos ( int id_cliente , string fecha,string hora,string barbero,int id)
 
         {
-            Nombre = nombre;
+            Id_cliente = id_cliente;
             Fecha = fecha;
             Hora = hora;
             Barbero = barbero;
             Id = id;    
         }
-        public Turnosnuevo(string nombre, string fecha, string hora, string barbero)
+        public Turnosnuevos( int id_cliente , string fecha, string hora, string barbero)
 
         {
-            Nombre = nombre;
+            Id_cliente= id_cliente;
             Fecha = fecha;
             Hora = hora;
             Barbero = barbero;

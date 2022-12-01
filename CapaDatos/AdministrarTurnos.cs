@@ -13,21 +13,21 @@ namespace CapaDatos
 {
     public class AdministrarTurnos : DatosConexion
     {
-        public int abmTurnos (string accion, Turnosnuevo objTurnosnuevo)
+        public int abmTurnos (string accion, Turnosnuevos objTurnosnuevo)
         {
             int resultado = -1;
             string orden = string.Empty;
 
             if (accion == "Alta")
-                orden = $"insert into Turnosnuevo values ( '{objTurnosnuevo.Nombre}', '{ objTurnosnuevo.Fecha}','{ objTurnosnuevo.Hora}','{objTurnosnuevo.Barbero}')";
+                orden = $"insert into Turnosnuevos  values ( '{objTurnosnuevo.Id_cliente}', '{ objTurnosnuevo.Fecha}','{ objTurnosnuevo.Hora}','{objTurnosnuevo.Barbero}')";
 
             if (accion == "Modificar")
-                orden = $"update Turnosnuevo set Fecha= ´{objTurnosnuevo.Fecha}' where  fecha='{objTurnosnuevo.Fecha}'";
+                orden = $"update Turnosnuevos set Fecha= ´{objTurnosnuevo.Fecha}' where  fecha='{objTurnosnuevo.Fecha}'";
             
 
            
             if (accion == "Baja")
-                orden = $"delete from Turnosnuevo fecha= '{objTurnosnuevo.Fecha}'";
+                orden = $"delete from Turnosnuevos fecha= '{objTurnosnuevo.Fecha}'";
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
             try
@@ -54,9 +54,9 @@ namespace CapaDatos
         {
             string orden = string.Empty;// se declara y se limpia la variable orden
             if (cual != "Todos")
-                orden = $"select * from turnosn where  = {(cual)};";
+                orden = $"select * from turnosnuevos where  = {(cual)};";
             else
-                orden = "select * from turnosnuevo;";
+                orden = "select * from turnosnuevos;";
             // falta hacer el delete
 
             SqlCommand cmd = new SqlCommand(orden, conexion);//se crea el command y se instancia,llama la orden si es un inser, update o felete
@@ -73,7 +73,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al listar Turnosnuevo", e);
+                throw new Exception("Error al listar Turnosnuevos", e);
             }
             finally
             {

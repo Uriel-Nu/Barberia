@@ -12,16 +12,16 @@ namespace CapaDatos
 {
     public class AdministrarClientes : DatosConexion
     {
-        public int abmClientes(string accion, Turnosnuevo objcliente)
+        public int abmClientes(string accion, Turnosnuevos objcliente)
         {
             int resultado = -1;
             string orden = string.Empty;
 
             if (accion == "Alta")
-                orden = "insert into Cliente values (" + objcliente.Nombre+ "');";
+                orden = "insert into Cliente values (" + objcliente.Id_cliente+ "');";
 
             if (accion == "Modificar")
-                orden = "update Cliente set Fecha='" + objcliente.Nombre + "');"; //"'
+                orden = "update Cliente set Fecha='" + objcliente.Id_cliente + "');"; //"'
             //where CodProf = "+ objProfesional.CodProf + "; ";
 
             // falta el de baja
